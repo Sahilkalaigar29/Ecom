@@ -1,0 +1,547 @@
+{
+	"info": {
+		"_postman_id": "74754ebd-c35e-46c8-92e6-b3eb2ad45baf",
+		"name": "Aqad",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14835280"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Sahil\",\n    \"phone\":\"8625881643\", \n    \"email\":\"sa@gmail.com\", \n    \"password\":\"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{p3}}/api/users",
+							"host": [
+								"{{p3}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI0NTcyNTgwLCJleHAiOjE3NTYxMzAxODB9.Lvf0e9n5b-DRKeibKm8rnsEorAmaTAu70D9F_QJxABU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{p3}}/api/users",
+							"host": [
+								"{{p3}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login with email",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzI0NTcyNTgwLCJleHAiOjE3NTYxMzAxODB9.Lvf0e9n5b-DRKeibKm8rnsEorAmaTAu70D9F_QJxABU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"sa@gmail.com\",\n    \"password\":\"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{p3}}/api/users/loginWithEmailPassword",
+							"host": [
+								"{{p3}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"loginWithEmailPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login with phone",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\":\"8625881643\",\n    \"password\":\"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{p3}}/api/users/loginWithPhonePassword",
+							"host": [
+								"{{p3}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"loginWithPhonePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{p3}}/api/users/1",
+							"host": [
+								"{{p3}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Electronics\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{p3}}/api/categories",
+							"host": [
+								"{{p3}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{p3}}/api/categories",
+							"host": [
+								"{{p3}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "warehouses",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"ABC\", \n    \"address\":\"Kolhapur\",\n    \"phone\":\"8625881643\", \n    \"lat\" : \"16.7050\", \n    \"long\":\"74.2433\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{p3}}/api/warehouses",
+							"host": [
+								"{{p3}}"
+							],
+							"path": [
+								"api",
+								"warehouses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{p3}}/api/warehouses",
+							"host": [
+								"{{p3}}"
+							],
+							"path": [
+								"api",
+								"warehouses"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"product1\",\n  \"description\": \"product1 description\",\n  \"category_id\": 1,\n  \"variants\": [\n    {\n      \"name\": \"variant1\",\n      \"price\": 100,\n      \"quantity\": 100,\n      \"warehouse_id\": 1,\n      \"minimum_order_quantity\":10\n    },\n    {\n      \"name\": \"variant2\",\n      \"price\": 200,\n      \"quantity\": 20,\n      \"warehouse_id\": 1,\n      \"minimum_order_quantity\":10\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{p3}}/api/products/",
+							"host": [
+								"{{p3}}"
+							],
+							"path": [
+								"api",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{p3}}/api/products/",
+							"host": [
+								"{{p3}}"
+							],
+							"path": [
+								"api",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "bulk",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"name\": \"The Great Gatsby\",\n        \"description\": \"Classic novel by F. Scott Fitzgerald\",\n        \"category_id\": 2,\n        \"variants\": [\n            {\n            \"name\": \"variant1\",\n            \"price\": 100,\n            \"quantity\": 100,\n            \"warehouse_id\": 1,\n            \"minimum_order_quantity\":10,\n            \"image_url\":\"https://google.com\"\n            },\n            {\n            \"name\": \"variant2\",\n            \"price\": 200,\n            \"quantity\": 20,\n            \"warehouse_id\": 1,\n            \"minimum_order_quantity\":10,\n            \"image_url\":\"https://bing.com\"\n            }\n        ]\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{p3}}/api/products/bulk",
+							"host": [
+								"{{p3}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"bulk"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{p3}}/api/products/1",
+							"host": [
+								"{{p3}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user_id\": 1,\n  \"variant_id\": 1,\n  \"quantity\": 10,\n  \"address\": \"Kathmandu\",\n  \"pick_up_lat\": 27.7172,\n  \"pick_up_long\": 85.324,\n  \"drop_off_lat\": 27.7172,\n  \"drop_off_long\": 85.324,\n  \"warehouse_id\": 1,\n  \"price\": 200,\n  \"delivery_charge\": 50,\n  \"payment_mode\": \"Cash on Delivery\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{p3}}/api/orders",
+							"host": [
+								"{{p3}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{p3}}/api/orders",
+							"host": [
+								"{{p3}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "delivery",
+			"item": [
+				{
+					"name": "update status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\":\"dispatched\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{p3}}/api/delivery/updateStatus/1",
+							"host": [
+								"{{p3}}"
+							],
+							"path": [
+								"api",
+								"delivery",
+								"updateStatus",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update delivery person",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"delivery_person_id\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{p3}}/api/delivery/assignDeliveryPerson/1",
+							"host": [
+								"{{p3}}"
+							],
+							"path": [
+								"api",
+								"delivery",
+								"assignDeliveryPerson",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
